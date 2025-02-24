@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { X, FileText, Sparkles, FlaskConical } from "lucide-react";
+import { X, FileText, Sparkles, FlaskConical, Pencil, Share2, MoreVertical } from "lucide-react";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineDocumentText } from "react-icons/hi2";
 import { GrDocumentTime } from "react-icons/gr";
@@ -17,6 +17,16 @@ const progressNotes = [
   { date: "January 22, 2025" },
   { date: "January 23, 2025" },
 
+];
+
+const socialHistory = [
+  { label: "Advance Directive", value: "Yes" },
+  { label: "Alcohol", value: "Heavy" },
+  { label: "Physical Activity", value: "Occasional" },
+  { label: "Smoking", value: "Current someday smoker" },
+  { label: "e-Cigarettes", value: "Current user of e-cigarettes" },
+  { label: "Other Tobacco or Nicotine", value: "Yes" },
+  { label: "Recreational Drugs", value: "Yes" }
 ];
 
 const systems = [
@@ -89,7 +99,7 @@ const Progress = () => {
   const [selectedAISuggestionIndex, setSelectedAISuggestionIndex] = useState(null); 
 
   return (
-    <div className="lg:w-1/2 w-full h-screen bg-black flex justify-center items-center p-[5px]">
+    <div className="lg:w-[55%] w-full h-screen bg-black flex justify-center items-center p-[5px]">
       <div className="w-full h-full bg-white rounded-2xl shadow-lg flex flex-col">
 
       
@@ -170,8 +180,21 @@ const Progress = () => {
 
          
           <div className="w-3/4 p-4 flex flex-col overflow-hidden">
-            <h2 className="text-lg font-semibold pb-2">Progress Note</h2>
-            <p className="text-sm text-gray-800 border-b py-2">
+          <div className="flex justify-between items-center">
+            <h2 className="text-lg font-semibold">Progress Note</h2>
+            <div className="flex gap-3">
+              <button className="text-gray-600 hover:text-gray-900">
+                <Pencil size={20} />
+              </button>
+              <button className="text-gray-600 hover:text-gray-900">
+                <Share2 size={20} />
+              </button>
+              <button className="text-gray-600 hover:text-gray-900">
+                <MoreVertical size={20} />
+              </button>
+            </div>
+          </div>
+            <p className="text-sm text-gray-500 border-b py-2">
               {selectedIndex !== null ? progressNotes[selectedIndex].date : "Select a note"} • Unlocked • No Signatures • No Addendums
             </p>
             <div className="flex-1 overflow-y-auto mt-2  no-scrollbar">
@@ -223,16 +246,16 @@ const Progress = () => {
                 <h3 className="text-black font-medium">None</h3>
               </div>
 
-              <div className="mt-4 border-b">
-                <p className="text-gray-500 text-sm">Social History*</p>
-                <h3 className="text-black">Advance Directive?<span className="font-medium">Yes</span> </h3>
-                <h3 className="text-black">Alcahol?<span className="font-medium"> Heavy</span></h3>
-                <h3 className="text-black">Physical Activity?<span className="font-medium"> Occassional</span></h3>
-                <h3 className="text-black">Smoking? <span className="font-medium">Current someday smoker</span></h3>
-                <h3 className="text-black">e-Cigerettes? <span className="font-medium">Current user of e cigerettes</span></h3>
-                <h3 className="text-black">Other Tobacco or Nicotine?<span className="font-medium"> Yes</span></h3>
-                <h3 className="text-black">Recreational Drugs?<span className="font-medium">Yes</span> </h3>
-              </div>
+              
+
+<div className="mt-4 border-b">
+    <p className="text-gray-500 text-sm">Social History*</p>
+    {socialHistory.map((item, index) => (
+      <h3 className="text-black" key={index}>
+        {item.label}? <span className="font-medium">{item.value}</span>
+      </h3>
+    ))}
+  </div>
 
               <div className="mt-4 border-b">
                 <p className="text-gray-500 text-sm">Mental Well-being</p>

@@ -9,8 +9,8 @@ const Dashboard = () => {
       <Sidebar />
 
       <div className="lg:flex flex-row w-full h-screen">
-        <Progress className="w-1/2" />
-        <VideoCall className="w-1/2" />
+        <Progress/>
+        <VideoCall  />
       </div>
     </div>
   );
