@@ -19,6 +19,71 @@ const progressNotes = [
 
 ];
 
+const systems = [
+  {
+    category: "General/Constitutional",
+    items: [
+      "Change in appetite",
+      "Chills",
+      "Fatigue",
+      "Fever",
+    ],
+  },
+  {
+    category: "Endocrine",
+    items: [
+      "Excessive sweating",
+      "Excessive thirst",
+      "Frequent urination",
+    ],
+  },
+  {
+    category: "Respiratory",
+    items: [
+      "Shortness of breath at rest",
+      "Shortness of breath with exertion",
+    ],
+  },
+  {
+    category: "Cardiovascular",
+    items: [
+      "Chest pain at rest",
+      "Chest pain with exertion",
+    ],
+  },
+  {
+    category: "Gastrointestinal",
+    items: [
+      "Abdominal pain",
+      "Blood in stool",
+      "Constipation",
+      "Decreased appetite",
+    ],
+  },
+];
+
+
+const reportData = [
+  { category: "General Appearance", details: "Pleasant, In No Acute Distress" },
+  { category: "Head", details: "Normocephalic, Atraumatic" },
+  { category: "Eyes", details: "Extra Ocular Movements Intact (EOMI)" },
+  { category: "Ears", details: "Tympanic Membrane Intact, Clear" },
+  { category: "Throat", details: "Clear" },
+  { category: "Neck/Thyroid", details: "Neck Supple, Full Range Of Motion" },
+  { category: "Lymph Nodes", details: "No Lymphadenopathy" },
+  { category: "Skin", details: "No Rashes, No Suspicious Lesions" },
+  { category: "Heart", details: "Regular Rate And Rhythm, S1,S2 Normal, No Murmurs, No Clicks, No Rubs" },
+  { category: "Breasts", details: "Not Examined" },
+  { category: "Abdomen", details: "Soft, Nontender, Nondistended, Bowel Sounds Present, No Hepatosplenomegaly" },
+  { category: "Back", details: "Normal Exam Of Spine" },
+  { category: "Musculoskeletal", details: "No Swelling Or Deformity" },
+  { category: "Extremities", details: "No Clubbing, Cyanosis, Or Edema" },
+  { category: "Peripheral Pulses", details: "Normal" },
+  { category: "Neurologic", details: "Alert And Oriented, Cranial Nerves 2-12 Intact" },
+  { category: "Psych", details: "Mood/Affect Full Range" },
+];
+
+
 const Progress = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedAISuggestionIndex, setSelectedAISuggestionIndex] = useState(null); 
@@ -114,6 +179,7 @@ const Progress = () => {
                 <p className="text-gray-500 text-sm">Appointment Type</p>
                 <h3 className="text-black font-medium">In Person</h3>
               </div>
+
               <div className="mt-4 border-b">
                 <p className="text-gray-500 text-sm">Chief Complaint/Reason for Visit*</p>
                 <ul className="text-gray-600 text-sm list-disc list-inside">
@@ -152,29 +218,75 @@ const Progress = () => {
                   <li><span className="text-black font-semibold">Pollen Ext</span></li>
                 </ul>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 border-b">
                 <p className="text-gray-500 text-sm">Past Surgical History</p>
                 <h3 className="text-black font-medium">None</h3>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 border-b">
                 <p className="text-gray-500 text-sm">Social History*</p>
-                <h3 className="text-black">Advance Directive? Yes</h3>
-                <h3 className="text-black">Alcahol? Heavy</h3>
-                <h3 className="text-black">Physical Activity? Occassional</h3>
-                <h3 className="text-black">Smoking? Current Someday Smoker</h3>
-                <h3 className="text-black">e-Cigerettes? Current user of e Cigerettes</h3>
-                <h3 className="text-black">Other Tobacco or Nicotine? Yes</h3>
-                <h3 className="text-black">Recreational Drugs? Yes</h3>
+                <h3 className="text-black">Advance Directive?<span className="font-medium">Yes</span> </h3>
+                <h3 className="text-black">Alcahol?<span className="font-medium"> Heavy</span></h3>
+                <h3 className="text-black">Physical Activity?<span className="font-medium"> Occassional</span></h3>
+                <h3 className="text-black">Smoking? <span className="font-medium">Current someday smoker</span></h3>
+                <h3 className="text-black">e-Cigerettes? <span className="font-medium">Current user of e cigerettes</span></h3>
+                <h3 className="text-black">Other Tobacco or Nicotine?<span className="font-medium"> Yes</span></h3>
+                <h3 className="text-black">Recreational Drugs?<span className="font-medium">Yes</span> </h3>
               </div>
 
-              <div className="mt-4 border-t pt-3">
-                <h3 className="text-black font-medium">Neurologic</h3>
-                <p className="text-gray-700 text-sm">Alert and Oriented, Cranial Nerves 2-12 Grossly Intact</p>
+              <div className="mt-4 border-b">
+                <p className="text-gray-500 text-sm">Mental Well-being</p>
+                <h3 className="text-black">Low engagement or pleasure:<span className="font-medium">Several Dates</span></h3>
+                <h3 className="text-black">Depressed, down or hopeless: <span className="font-medium">Several days</span></h3>
               </div>
-              <div className="mt-4">
-                <h3 className="text-black font-medium">Psych</h3>
-                <p className="text-gray-700 text-sm">Mood? Affect Full Range</p>
+
+              <div className="mt-4 border-b">
+                <p className="text-gray-500 text-sm">Preferred Pharmacy</p>
+                <h3 className="text-black font-medium">New York, NY, USA</h3>
+              </div>
+
+              <div className="mt-4 border-b">
+                <p className="text-gray-500 text-sm">Health Related Behavior</p>
+                <h3 className="text-black font-medium">None</h3>
+              </div> 
+
+              <div className="mt-4 border-b">
+                <p className="text-gray-500 text-sm">Health Related Behavior</p>
+                <h3 className="text-black font-medium">None</h3>
+              </div> 
+
+      <div className="mt-4 border-b">
+      <p className="text-gray-500 text-sm">Review of Systems (ROS)*</p>
+      <ul className="list-disc pl-5">
+        {systems.map((system, index) => (
+          <li key={index} className="border-b pb-2 mb-2">
+            <h3 className="font-semibold">{system.category}</h3>
+            <ul className="pl-5">
+              {system.items.map((item, idx) => (
+                <li key={idx}>Denies {item}</li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div className="mt-4 border-b">
+      <h2 className="text-gray-500 text-sm">Physical Examination</h2>
+      <ul>
+        {reportData.map((item, index) => (
+          <li key={index} className="mb-3">
+            <span className="font-medium block">{item.category}</span>
+            <span>{item.details}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    
+    <div className="mt-4 border-b">
+                <p className="text-gray-500 text-sm">Vitals</p>
+                <h3 className="text-black font-medium">None</h3>
               </div>
             </div>  
           </div>

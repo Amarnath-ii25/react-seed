@@ -10,7 +10,7 @@ const VideoCall = () => {
   const randomVideoURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
   return (
-    <div className="lg:w-1/2 w-full lg:mt-0 mt-[-20%] h-screen flex flex-col justify-center items-center bg-black p-2">
+    <div className="lg:w-1/2 w-full lg:mt-0 mt-[-20%] h-screen flex flex-col justify-center items-center bg-gray-900 p-2">
    
       <div className="w-full h-[70%] bg-white shadow-lg rounded-lg overflow-hidden flex justify-center items-center">
         <iframe
