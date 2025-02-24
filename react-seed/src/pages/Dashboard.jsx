@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../components/sidebar";
+import Sidebar from "../components/Sidebar";
 import Progress from "../components/Progress";
 import VideoCall from "../components/VideoCall";
 
