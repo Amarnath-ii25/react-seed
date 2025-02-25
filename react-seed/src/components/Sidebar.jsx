@@ -39,7 +39,7 @@ const Sidebar = () => {
         </button>
       </div>
 
-      {/* Main Section */}
+      
       <p className="text-gray-500 text-sm">Main</p>
       <div>
         <SidebarIcon Icon={GoHome} isActive={activeIcon === "home"} onClick={() => handleIconClick("home")} />
