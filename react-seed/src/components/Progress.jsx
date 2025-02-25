@@ -69,14 +69,13 @@ const reportData = [
   { category: "Psych", details: "Mood/Affect Full Range" },
 ];
 
-const Progress = () => {
+
+const Progress = ({ setIsProgressVisible, setIsFullScreen }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedAISuggestionIndex, setSelectedAISuggestionIndex] = useState(null);
-  const [isProgressVisible, setIsProgressVisible] = useState(true);
-
   return (
     <div className="lg:w-[55%] w-full h-screen bg-gray-900 flex justify-center items-center p-[5px]">
-      {isProgressVisible ? (
+     
         <div className="w-full h-full bg-white rounded-2xl shadow-lg flex flex-col">
           <div className="w-full bg-white-100 p-4 flex items-center justify-between rounded-t-2xl border-b">
             <div className="flex items-center gap-3">
@@ -90,12 +89,17 @@ const Progress = () => {
                 <p className="text-xs text-gray-500">MRN: 8391877</p>
               </div>
             </div>
+           
             <button
-              className="text-gray-500 hover:text-gray-700"
-              onClick={() => setIsProgressVisible(false)}
-            >
-              <X size={20} />
-            </button>
+            className="text-gray-500 hover:text-gray-700"
+            onClick={() => {
+              setIsProgressVisible(false);
+              setIsFullScreen(true); 
+            }}
+          >
+            <X size={20} />
+          </button>
+
           </div>
 
           <div className="flex flex-1 overflow-hidden">
@@ -302,7 +306,6 @@ const Progress = () => {
             </div>
           </div>
         </div>
-      ) : null}
     </div>
   );
 };
