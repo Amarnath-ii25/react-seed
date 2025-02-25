@@ -26,7 +26,7 @@ const socialHistory = [
   { label: "Recreational Drugs", value: "Yes" },
 ];
 
-const systems = [
+const reviewofSystems = [
   {
     category: "General/Constitutional",
     items: ["Change in appetite", "Chills", "Fatigue", "Fever"],
@@ -239,7 +239,7 @@ const ProgresSection = ({ setIsProgressVisible, setIsFullScreen }) => {
                   <p className="text-gray-500 lg:text-base text-xs">Social History*</p>
                   {socialHistory.map((item, index) => (
                     <h3 className="text-black lg:text-base text-xs" key={index}>
-                      {item.label}? <span className="lg:text-base text-xs font-medium">{item.value}</span>
+                      {item.label}? <span className="lg:text-base text-xs ">{item.value}</span>
                     </h3>
                   ))}
                 </div>
@@ -261,9 +261,9 @@ const ProgresSection = ({ setIsProgressVisible, setIsFullScreen }) => {
                   <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4">
-                  <p className="text-gray-500 lg:text-base text-xs">Review of Systems (ROS)*</p>
+                  <p className="text-gray-500 lg:text-base text-xs">Review of reviewofSystems (ROS)*</p>
                   <ul className="list-disc pl-5">
-                    {systems.map((system, index) => (
+                    {reviewofSystems.map((system, index) => (
                       <li key={index} className="border-b pb-2 mb-2">
                         <h3 className="font-semibold lg:text-base text-xs">{system.category}</h3>
                         <ul className="pl-5">
