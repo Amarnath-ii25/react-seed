@@ -86,10 +86,13 @@ const VideoCall = ({ isProgressVisible }) => {
 
   return (
     <div
-      className={`${
-        isFullScreen ? "fixed inset-0 w-full h-full" : isProgressVisible ? "lg:w-[45%] w-full" : "w-full"
-      } h-screen flex flex-col justify-center items-center bg-gray-900 p-2 transition-all duration-300`}
-    >
+  className={`${
+    isFullScreen ? "fixed inset-0 w-full h-full" : isProgressVisible ? " w-full" : "w-full"
+  } h-screen flex flex-col justify-center items-center bg-gray-900 p-2 transition-all duration-300`}
+>
+
+
+
       <div className="relative w-full h-[90%] bg-white shadow-lg rounded-lg overflow-hidden flex justify-center items-center">
         <iframe
           src={randomVideoURL}

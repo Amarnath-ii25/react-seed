@@ -74,7 +74,7 @@ const Progress = ({ setIsProgressVisible, setIsFullScreen }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedAISuggestionIndex, setSelectedAISuggestionIndex] = useState(null);
   return (
-    <div className="lg:w-[55%] w-full h-screen bg-gray-900 flex justify-center items-center p-[5px]">
+    <div className="w-full h-screen bg-gray-900 flex justify-center items-center p-[5px]">
      
         <div className="w-full h-full bg-white rounded-2xl shadow-lg flex flex-col">
           <div className="w-full bg-white-100 p-4 flex items-center justify-between rounded-t-2xl border-b">
