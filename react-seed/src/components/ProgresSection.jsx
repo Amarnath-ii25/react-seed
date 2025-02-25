@@ -103,7 +103,7 @@ const ProgresSection = ({ setIsProgressVisible, setIsFullScreen }) => {
           </div>
 
           <div className="flex flex-1 overflow-hidden">
-            <div className="w-16 bg-white flex flex-col items-center lg:py-4 py-0 lg:gap-6 gap-4 border-r shadow-lg ">
+            <div className="w-16 bg-white flex flex-col items-center lg:py-4 py-0 lg:gap-6 gap-1.5 border-r shadow-lg ">
               <button className="text-black hover:text-gray-800"><CgProfile size={22} /></button>
               <button className="text-black hover:text-gray-800"><HiOutlineDocumentText size={22} /></button>
               <button className="text-black hover:text-gray-800"><GrDocumentTime size={22} /></button>
@@ -122,7 +122,7 @@ const ProgresSection = ({ setIsProgressVisible, setIsFullScreen }) => {
             </div>
 
             <div className="lg:w-1/4 w-[50px] bg-white-100 lg:p-4 flex flex-col gap-5 border-r">
-              <h2 className="lg:text-xl text-[60%] lg:pt-0 pt-5 lg:pl-0 pl-1 font-semibold border-b pb-2">Progress Note</h2>
+              <h2 className="lg:text-xl text-[40%] lg:pt-0 pt-5 lg:pl-0 pl-1 font-semibold border-b pb-2">Progress<span className="ml-1 mr-1">Note</span></h2>
               <div className="flex-1 mt-4 overflow-y-auto no-scrollbar">
                 {progressNotes.map((note, index) => (
                   <div key={index}>
@@ -156,115 +156,119 @@ const ProgresSection = ({ setIsProgressVisible, setIsFullScreen }) => {
 
             <div className="w-3/4 p-4 flex flex-col overflow-hidden">
               <div className="flex justify-between items-center">
-                <h2 className="text-xl font-semibold">Progress Note</h2>
-                <div className="flex gap-3">
+                <h2 className="lg:text-xl text-xs font-semibold ">Progress<span className="ml-1">Note</span></h2>
+                <div className="flex lg:gap-3 lg:ml-0 ml-2">
                   <button className="text-gray-600 hover:text-gray-900">
-                    <Pencil size={20} />
+                    <Pencil className="lg:w-10 w-3" />
                   </button>
                   <button className="text-gray-600 hover:text-gray-900">
-                    <Share2 size={20} />
+                    <Share2 className="lg:w-10 w-3" />
                   </button>
                   <button className="text-gray-600 hover:text-gray-900">
-                    <MoreVertical size={20} />
+                    <MoreVertical className="lg:w-10 w-3" />
                   </button>
                 </div>
               </div>
-              <p className="text-sm text-gray-500 border-b py-2">
+              <p className="lg:text-sm text-xs text-gray-500 border-b py-2">
                 {selectedIndex !== null ? progressNotes[selectedIndex].date : "Select a note"} • Unlocked • No Signatures • No Addendums
               </p>
               <div className="flex-1 overflow-y-auto mt-2 no-scrollbar">
                 <div className="mt-4">
-                  <p className="text-gray-500 text-sm">Appointment Type</p>
-                  <h3 className="text-black font-medium text-lg">In Person</h3>
+                  <p className="text-gray-500 lg:text-sm text-xs">Appointment Type</p>
+                  <h3 className="font-medium block lg:text-base text-xs">In Person</h3>
+                </div>
+                
+                <div className="mt-4 border-b">
+                  <p className="text-gray-500 lg:text-sm text-xs">Chief Complaint/Reason for Visit*</p>
+                  <ul className="text-gray-600 lg:text-sm text-xs list-disc list-inside">
+                    <li><span className="text-black font-medium lg:text-base text-xs">Shortness of Breath</span></li>
+                  </ul>
+                </div>
+
+
+
+                <div className="mt-4 border-b">
+                  <p className="text-gray-500 lg:text-sm text-xs">Uploaded Images</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Chief Complaint/Reason for Visit*</p>
-                  <ul className="text-gray-600 text-sm list-disc list-inside">
-                    <li><span className="text-black font-medium text-base">Shortness of Breath</span></li>
+                  <p className="text-gray-500 lg:text-sm text-xs">History of Present Illness</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
+                </div>
+                <div className="mt-4 border-b">
+                  <p className="text-gray-500 lg:text-sm text-xs">Past Medical History</p>
+                  <ul className="text-gray-600 lg:text-sm text-xs list-disc list-inside">
+                    <li><span className="text-black font-medium lg:text-base text-xs">Abnormal Pain</span></li>
                   </ul>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Uploaded Images</p>
-                  <h3 className="text-black font-medium">None</h3>
-                </div>
-                <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">History of Present Illness</p>
-                  <h3 className="text-black font-medium">None</h3>
-                </div>
-                <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Past Medical History</p>
-                  <ul className="text-gray-600 text-sm list-disc list-inside">
-                    <li><span className="text-black font-medium text-base">Abnormal Pain</span></li>
-                  </ul>
-                </div>
-                <div className="mt-4 border-b">
-                  <h3 className="text-gray-500 text-sm">Medications</h3>
-                  <ul className="text-gray-600 text-sm list-disc list-inside">
+                  <h3 className="text-gray-500 lg:text-sm text-xs">Medications</h3>
+                  <ul className="text-gray-600 text-sm list-disc list-inside mt-3">
                     <li>
-                      <span className="text-black font-medium text-base">Pantoprazole Sodium Powder</span>
+                      <span className="text-black font-medium lg:text-base text-xs">Pantoprazole Sodium Powder</span>
                       <ul className="list-none ml-6">
-                        <li className="text-xs text-gray-500">Once</li>
+                        <li className="text-gray-500 lg:text-base text-xs">Once</li>
                       </ul>
                     </li>
-                    <li>
-                      <span className="text-black font-medium text-base">Dolobid Oral Tablet</span>
+                    <li className="mt-2">
+                      <span className="text-black font-medium lg:text-base text-xs">Dolobid Oral Tablet</span>
                       <ul className="list-none ml-6">
-                        <li className="text-xs text-gray-500">Twice</li>
+                        <li className="text-gray-500 lg:text-base text-xs">Twice</li>
                       </ul>
                     </li>
-                    <li>
-                      <span className="text-black font-medium text-base">Delestrogen Intramuscular Oil (20 MG)</span>
+                    <li className="mt-3">
+                      <span className="text-black font-medium lg:text-base text-xs">Delestrogen Intramuscular Oil (20 MG)</span>
                       <ul className="list-none ml-6">
-                        <li className="text-xs text-gray-500">Twice</li>
+                        <li className="text-gray-500 lg:text-base text-xs">Twice</li>
                       </ul>
                     </li>
                   </ul>
                 </div>
                 <div className="mt-4 border-b">
-                  <h3 className="text-gray-500 text-sm">Allergies</h3>
+                  <h3 className="text-gray-500 lg:text-base text-xs">Allergies</h3>
                   <ul className="text-gray-600 text-sm list-disc list-inside">
-                    <li><span className="text-black font-medium text-base">Dust Mite Ext</span></li>
-                    <li><span className="text-black font-medium text-base">Pollen Ext</span></li>
+                    <li><span className="text-black font-medium lg:text-base text-xs">Dust Mite Ext</span></li>
+                    <li><span className="text-black font-medium lg:text-base text-xs">Pollen Ext</span></li>
                   </ul>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Past Surgical History</p>
-                  <h3 className="text-black font-medium">None</h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Past Surgical History</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Social History*</p>
+                  <p className="text-gray-500 lg:text-base text-xs">Social History*</p>
                   {socialHistory.map((item, index) => (
-                    <h3 className="text-black" key={index}>
-                      {item.label}? <span className="font-medium">{item.value}</span>
+                    <h3 className="text-black lg:text-base text-xs" key={index}>
+                      {item.label}? <span className="lg:text-base text-xs font-medium">{item.value}</span>
                     </h3>
                   ))}
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Mental Well-being</p>
-                  <h3 className="text-black">Low engagement or pleasure:<span className="font-medium">Several Dates</span></h3>
-                  <h3 className="text-black">Depressed, down or hopeless: <span className="font-medium">Several days</span></h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Mental Well-being</p>
+                  <h3 className="text-black lg:text-base text-xs">Low engagement or pleasure:<span className="lg:text-base text-xs">Several Dates</span></h3>
+                  <h3 className="text-black lg:text-base text-xs">Depressed, down or hopeless: <span className="lg:text-base text-xs">Several days</span></h3>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Preferred Pharmacy</p>
-                  <h3 className="text-black font-medium">New York, NY, USA</h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Preferred Pharmacy</p>
+                  <h3 className="font-medium block lg:text-base text-xs">New York, NY, USA</h3>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Health Related Behavior</p>
-                  <h3 className="text-black font-medium">None</h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Health Related Behavior</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Health Related Behavior</p>
-                  <h3 className="text-black font-medium">None</h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Health Related Behavior</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4">
-                  <p className="text-gray-500 text-sm">Review of Systems (ROS)*</p>
+                  <p className="text-gray-500 lg:text-base text-xs">Review of Systems (ROS)*</p>
                   <ul className="list-disc pl-5">
                     {systems.map((system, index) => (
                       <li key={index} className="border-b pb-2 mb-2">
-                        <h3 className="font-semibold">{system.category}</h3>
+                        <h3 className="font-semibold lg:text-base text-xs">{system.category}</h3>
                         <ul className="pl-5">
                           {system.items.map((item, idx) => (
-                            <li key={idx}>Denies {item}</li>
+                            <li key={idx} className="lg:text-base text-xs">Denies {item}</li>
                           ))}
                         </ul>
                       </li>
@@ -272,35 +276,35 @@ const ProgresSection = ({ setIsProgressVisible, setIsFullScreen }) => {
                   </ul>
                 </div>
                 <div className="mt-4 border-b">
-                  <h2 className="text-gray-500 text-sm">Physical Examination</h2>
+                  <h2 className="text-gray-500 lg:text-base text-xs">Physical Examination</h2>
                   <ul>
                     {reportData.map((item, index) => (
                       <li key={index} className="mb-3">
-                        <span className="font-medium block">{item.category}</span>
-                        <span>{item.details}</span>
+                        <span className="font-medium block lg:text-base text-xs">{item.category}</span>
+                        <span className='lg:text-base text-xs'>{item.details}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Vitals</p>
-                  <h3 className="text-black font-medium">None</h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Vitals</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Labs</p>
-                  <h3 className="text-black font-medium">None</h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Labs</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Studies/Radiology/Pap Results</p>
-                  <h3 className="text-black font-medium">None</h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Studies/Radiology/Pap Results</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Diagnosis</p>
-                  <h3 className="text-black font-medium">None</h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Diagnosis</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4 border-b">
-                  <p className="text-gray-500 text-sm">Tests</p>
-                  <h3 className="text-black font-medium">None</h3>
+                  <p className="text-gray-500 lg:text-base text-xs">Tests</p>
+                  <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
               </div>
             </div>

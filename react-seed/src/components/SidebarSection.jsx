@@ -22,7 +22,7 @@ const Sidebarsection = () => {
   return (
     <div
       className={`h-screen bg-white border-r p-3 flex flex-col items-center transition-all duration-300 ${
-        collapsed ? "lg:w-32 md:w-24 sm:w-36 w-24": "lg:w-24 md:w-20 sm:w-16 w-12"  
+        collapsed ? "lg:w-32 w-24": "lg:w-24 w-20 lg:ml-0 ml-[-4%]"  
       }`}
     >
       <div className="flex items-center w-full mb-6 relative px-4">

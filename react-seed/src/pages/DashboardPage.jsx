@@ -13,7 +13,7 @@ const DashboardPage = () => {
     <div className="flex w-full h-screen">
       <Sidebar />
 
-      <div className="w-full h-screen bg-gray-900 flex justify-center items-center p-1">
+      <div className="lg:w-full w-[270px] lg:h-screen bg-gray-900 lg:flex flex-row  justify-center items-center p-1">
      
       {isProgressVisible && (
         <div
