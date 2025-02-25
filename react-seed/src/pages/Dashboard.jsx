@@ -7,27 +7,34 @@ const Dashboard = () => {
 
   const [isProgressVisible, setIsProgressVisible] = useState(true);
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isHangingOn, setIsHangingOn] = useState(true);
 
   return (
     <div className="flex w-full h-screen">
       <Sidebar />
 
-      <div className="flex h-screen w-full">
-      {/* Progress Component */}
+      <div className="w-full h-screen bg-gray-900 flex justify-center items-center p-1">
+     
       {isProgressVisible && (
-        <div className={`transition-all duration-300 ${isFullScreen ? "w-0" : "lg:w-[55%] w-full"}`}>
+        <div
+          className={`transition-all duration-300 ${
+            isFullScreen || !isHangingOn ? "w-full" : "lg:w-[55%] w-full"
+          }`}
+        >
           <Progress setIsProgressVisible={setIsProgressVisible} setIsFullScreen={setIsFullScreen} />
         </div>
       )}
 
-      {/* VideoCall Component */}
-      <div
-        className={`transition-all duration-300 ${
-          isFullScreen ? "w-full" : isProgressVisible ? "lg:w-[45%] w-full" : "w-full"
-        }`}
-      >
-        <VideoCall isProgressVisible={isProgressVisible} />
-      </div>
+   
+      {isHangingOn && (
+        <div
+          className={`transition-all duration-300 ${
+            isFullScreen ? "w-full" : isProgressVisible ? "lg:w-[45%] w-full" : "w-full"
+          }`}
+        >
+          <VideoCall isProgressVisible={isProgressVisible} setIsHangingOn={setIsHangingOn} />
+        </div>
+      )}
     </div>
     </div>
   );
