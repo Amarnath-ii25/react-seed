@@ -70,7 +70,7 @@ const reportData = [
 ];
 
 
-const Progress = ({ setIsProgressVisible, setIsFullScreen }) => {
+const ProgresSection = ({ setIsProgressVisible, setIsFullScreen }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedAISuggestionIndex, setSelectedAISuggestionIndex] = useState(null);
   return (
@@ -310,4 +310,4 @@ const Progress = ({ setIsProgressVisible, setIsFullScreen }) => {
   );
 };
 
-export default Progress;
+export default ProgresSection;

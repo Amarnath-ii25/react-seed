@@ -11,7 +11,7 @@ import { RiBuildingLine } from "react-icons/ri";
 import { TfiAnnouncement } from "react-icons/tfi";
 import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
 
-const Sidebar = () => {
+const Sidebarsection = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [activeIcon, setActiveIcon] = useState(null);
 
@@ -75,4 +75,4 @@ const SidebarIcon = ({ Icon, isActive, onClick }) => (
   </div>
 );
 
-export default Sidebar;
+export default Sidebarsection;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import Progress from "../components/Progress";
+import Sidebar from "../components/SidebarSection";
 import VideoCall from "../components/VideoCall";
+import ProgressSection from "../components/ProgresSection";
 
-const Dashboard = () => {
+const DashboardPage = () => {
 
   const [isProgressVisible, setIsProgressVisible] = useState(true);
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -21,7 +21,7 @@ const Dashboard = () => {
             isFullScreen || !isHangingOn ? "w-full" : "lg:w-[55%] w-full"
           }`}
         >
-          <Progress setIsProgressVisible={setIsProgressVisible} setIsFullScreen={setIsFullScreen} />
+          <ProgressSection setIsProgressVisible={setIsProgressVisible} setIsFullScreen={setIsFullScreen} />
         </div>
       )}
 
@@ -40,4 +40,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardPage;
