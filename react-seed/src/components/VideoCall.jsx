@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mic, MicOff, Video, VideoOff, MessageSquare, PhoneOff, Maximize, Minimize } from "lucide-react";
+import { Mic, MicOff, Video, VideoOff, MessageSquare, Phone, Maximize, Minimize } from "lucide-react";
 
 const VideoCall = ({ isProgressVisible, setIsHangingOn }) => {
   const [isMicOn, setIsMicOn] = useState(true);
@@ -55,12 +55,12 @@ const VideoCall = ({ isProgressVisible, setIsHangingOn }) => {
           {isVideoOn ? <Video size={20} /> : <VideoOff size={20} />}
         </button>
 
-        {/* Hang-Up Button */}
+        
         <button
           className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
-          onClick={() => setIsHangingOn(false)} // Hide VideoCall and expand Progress
+          onClick={() => setIsHangingOn(false)} 
         >
-          <PhoneOff size={20} />
+          <Phone size={20} />
         </button>
       </div>
     </div>
