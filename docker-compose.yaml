@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  ui:
+    image: ui
+    build:
+      context: react-seed
+      dockerfile: ./Dockerfile
+    ports:
+      - "5174:5143"

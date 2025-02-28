@@ -13,7 +13,7 @@ import { LiaClinicMedicalSolid } from "react-icons/lia";
 const progressNotes = [
   { date: "January 21, 2025" },
   { date: "December 12, 2024" },
-  { date: "Aug 2, 2024" },
+  { date: "August 2, 2024" },
 ];
 
 const socialHistory = [
@@ -121,12 +121,12 @@ const ProgresSection = ({ setIsProgressVisible, setIsFullScreen }) => {
               <button className="text-black hover:text-gray-800"><LuAppWindow size={22} /></button>
             </div>
 
-            <div className="lg:w-1/4 w-[50px] bg-white-100 lg:p-4 flex flex-col gap-5 border-r">
+            <div className="lg:w-1/3 w-[50px] bg-white-100 lg:p-4 flex flex-col gap-5 border-r">
               <h2 className="lg:text-xl text-[40%] lg:pt-0 pt-5 lg:pl-0 pl-1 font-semibold border-b pb-2">Progress<span className="ml-1 mr-1">Note</span></h2>
               <div className="flex-1 mt-4 overflow-y-auto no-scrollbar">
                 {progressNotes.map((note, index) => (
                   <div key={index}>
-                    <p className="lg:text-sm text-xs lg:block hidden text-gray-500">{note.date}</p>
+                    <p className="lg:text-sm text-[10px] text-gray-500">{note.date}</p>
                     <button
                       className={`flex items-center gap-2 px-3 py-2 rounded-md w-full mt-2 ${
                         selectedIndex === index ? "bg-blue-100 text-blue-500" : "text-black"
@@ -261,7 +261,7 @@ const ProgresSection = ({ setIsProgressVisible, setIsFullScreen }) => {
                   <h3 className="font-medium block lg:text-base text-xs">None</h3>
                 </div>
                 <div className="mt-4">
-                  <p className="text-gray-500 lg:text-base text-xs">Review of reviewofSystems (ROS)*</p>
+                  <p className="text-gray-500 lg:text-base text-xs">Review of Systems (ROS)*</p>
                   <ul className="list-disc pl-5">
                     {reviewofSystems.map((system, index) => (
                       <li key={index} className="border-b pb-2 mb-2">

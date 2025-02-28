@@ -7,6 +7,7 @@ const VideoCall = ({ isProgressVisible, setIsHangingOn }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   const randomVideoURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+  // const randomVideoURL = "https://securestaging.gethealthie.com/cms1500s/new/?patient_id=1734583"
 
   return (
     <div
@@ -14,7 +15,7 @@ const VideoCall = ({ isProgressVisible, setIsHangingOn }) => {
         isFullScreen ? "fixed inset-0 w-full h-full" : isProgressVisible ? "w-full" : "w-full"
       } h-screen flex flex-col justify-center items-center bg-gray-900 p-2 transition-all duration-300`}
     >
-      <div className="relative w-full h-[90%] bg-white shadow-lg rounded-lg overflow-hidden flex justify-center items-center">
+      <div className="relative w-full h-screen bg-white shadow-lg rounded-lg overflow-hidden flex justify-center items-center">
         <iframe
           src={randomVideoURL}
           allow="autoplay; fullscreen"

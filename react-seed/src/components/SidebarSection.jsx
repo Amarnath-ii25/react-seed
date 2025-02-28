@@ -20,16 +20,17 @@ const Sidebarsection = () => {
   };
 
   return (
+  
     <div
-      className={`h-screen bg-white border-r p-3 flex flex-col items-center transition-all duration-300 ${
-        collapsed ? "lg:w-32 w-24": "lg:w-24 w-20 lg:ml-0 ml-[-4%]"  
-      }`}
-    >
+  className={`h-screen bg-white border-r p-3 flex flex-col items-center transition-all duration-300 ${
+    collapsed ? "lg:w-32 w-24" : "lg:w-24 w-20 lg:ml-0 ml-[-1%]"
+  }`}
+>
       <div className="flex items-center w-full mb-6 relative px-4">
         <img
-          src="https://static.vecteezy.com/ti/gratis-vektor/t1/8652535-yoga-lotus-pose-symbol-logo-konzept-meditation-yoga-minimal-symbol-gesundheit-spa-meditation-harmonie-zen-logotyp-kreative-grafik-zeichen-design-vorlage-vektor.jpg"
+          src="https://virtuemed.ai/wp-content/uploads/2024/08/Copy-of-VirtueMed-Logo.svg"
           alt="Profile"
-          className="rounded-full border-2 border-gray-400 mx-auto"
+          className="rounded-full border-2 mx-auto"
         />
         <button
           onClick={() => setCollapsed(!collapsed)}
@@ -66,7 +67,7 @@ const Sidebarsection = () => {
 
 const SidebarIcon = ({ Icon, isActive, onClick }) => (
   <div
-    className={`flex justify-center items-center p-3 rounded-lg cursor-pointer transition-all ${
+    className={`flex justify-center items-center p-2 rounded-lg cursor-pointer transition-all ${
       isActive ? "text-blue-500 bg-blue-100" : "text-gray-500 hover:bg-gray-100"
     }`}
     onClick={onClick}
